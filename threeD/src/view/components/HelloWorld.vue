@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{$t('test.h2')}}
+    {{$t('Login.h2')}}
   </div>
 </template>
 

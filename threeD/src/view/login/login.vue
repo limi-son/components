@@ -11,7 +11,7 @@
             <el-form-item  prop="pass">
                 <el-input prefix-icon="el-icon-lock" type="password" v-model="ruleForm.pass" :clearable="true" autocomplete="on"></el-input>
             </el-form-item>
-            <el-button style="width:100%" :loading="loading" type="primary" @click="login">login</el-button>
+            <el-button style="width:100%" :loading="loading" type="primary" @click="login">{{$t('Login.login')}}</el-button>
         </el-form>
    </div>
   </div>

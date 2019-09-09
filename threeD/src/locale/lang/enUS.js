@@ -1,6 +1,7 @@
 const enUS = {
-    test:{
-        h2:'test'
+    Login:{
+        h2:'test',
+        login:'login',
     },
 }
 export default enUS
