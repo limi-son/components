@@ -1,10 +1,41 @@
 
 
-const appRouter=[
+export const Router=[
     {
-      path: '/',
-      name: 'home',
-      component: ()=>import('@/view/components/HelloWorld.vue')
+      path: '/layout', //路径
+      name:'layout',
+      component: () => import('@/view/Layout.vue'), //父组件
+      redirect: { name: 'home' },
+      children: [
+        {
+          path: 'home',
+          name: 'home',
+          meta: {title:'首页',i:'el-icon-star-off'},
+          component: ()=>import('@/view/components/home.vue')
+        },
+        {
+          path: 'category',
+          name: 'category', 
+          meta: { title: '分类',i:'el-icon-menu' },//icon: 'guihuashishi' 
+          component: ()=>import('@/view/test/category.vue') //子组件
+        },
+        {
+          path: 'user',
+          name: 'user',
+          meta: { title: '我的',i:'el-icon-user' },
+          component: ()=>import('@/view/test/user.vue')
+        },
+      ]
+    }
+  ]
+
+
+export const Intercept=[
+    {
+      path: '/login',
+      name: 'login',
+      meta: { title: 'login' },
+      component: ()=>import('@/view/login/login.vue')
     },
     {
       path: '/401',
@@ -21,32 +52,9 @@ const appRouter=[
       name: '500',
       component: ()=>import('@/view/Intercept/500.vue')
     },
-    {
-      path: '/login',
-      name: 'login',
-      meta: { title: 'login' },
-      component: ()=>import('@/view/login/login.vue')
-    },
-    {
-      path: '/test', //路径
-      name:'test',
-      component: () => import('@/view/Layout.vue'), //父组件
-      children: [
-        {
-          path: 'test1',
-          name: 'test1', 
-          meta: { title: '401' },//icon: 'guihuashishi' 
-          component: () => ()=>import('@/view/test/test1.vue') //子组件
-        },
-        {
-          path: 'test2',
-          name: 'test2',
-          meta: { title: '403' },
-          component: ()=>import('@/view/test/test2.vue')
-        },
-      ]
-    }
-  ]
+]
 
-
-export default appRouter
+export const appRouter=[
+  ...Router,
+  ...Intercept
+]

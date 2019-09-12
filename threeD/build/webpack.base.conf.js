@@ -50,8 +50,17 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        test: /\.s[ac]ss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              data: `$color: red;`
+            }
+          }
+        ]
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,

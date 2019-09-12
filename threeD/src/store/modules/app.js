@@ -1,8 +1,8 @@
-import appRouter from '../../router/appRouter'
+import {Router} from '../../router/appRouter'
 const app={
     state: {
         lang:'', //语言环境
-        menuList: [...appRouter], //菜单
+        menuList: [...Router], //菜单
     },
     mutations: {
         updateMenuList(state,routes){
