@@ -2,7 +2,7 @@
 
 export const Router=[
     {
-      path: '/layout', //路径
+      path: '/', //路径
       name:'layout',
       component: () => import('@/view/Layout.vue'), //父组件
       redirect: { name: 'home' },

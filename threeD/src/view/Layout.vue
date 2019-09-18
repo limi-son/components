@@ -49,7 +49,7 @@ export default {
  footer {
     height: 3rem;
     border-top: 1px solid #e6e7e8;
-    background: rebeccapurple;
+    background: rgb(250, 248, 252);
  }
   nav {
       height: 3rem;
