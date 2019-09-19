@@ -7,8 +7,8 @@
         <!-- 底部导航 -->
         <footer>
          <nav>
-            <li v-for="(nav) in navs" :key="nav.name" @click="goto(nav)">
-            <i :class="nav.meta.i"></i>
+            <li v-for="(nav) in navs" :key="nav.name" @click="goto(nav)" :class="navColor===nav.name ? 'activeColor' : 'navColor'">
+              <i :class="nav.meta.i" ></i>
             <span>{{nav.meta.title}}</span>
             </li>
          </nav>
@@ -20,14 +20,26 @@ export default {
     data(){
         return{
             navs:[],
-
+            navColor:this.$router.app._route.name,
         }
+    },
+    watch: {
+        navColor: {
+           handler:function(val){
+               
+           },
+            immediate: true,
+            //  深入监听
+            deep: true,
+        },
     },
     mounted() {
         this.navs=this.$store.state.app.menuList[0].children;
+
     },
     methods:{
         goto(nav){
+            this.navColor=nav.name;
             this.$router.push({ name: nav.name });
         }
     }
@@ -40,6 +52,12 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+.activeColor{
+    color: rgb(79, 79, 235);
+}
+.navColor{
+    color: #a7a7a7;
 }
 .route{
      flex: 1;
@@ -61,7 +79,7 @@ export default {
         flex-direction: column;
         text-align: center;
         flex: 1;
-        color: #a7a7a7;
+        /* color: #a7a7a7; */
         /* height: 3rem; */
  }
  nav li i {
