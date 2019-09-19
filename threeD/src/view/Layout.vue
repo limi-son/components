@@ -24,14 +24,6 @@ export default {
         }
     },
     watch: {
-        navColor: {
-           handler:function(val){
-               
-           },
-            immediate: true,
-            //  深入监听
-            deep: true,
-        },
     },
     mounted() {
         this.navs=this.$store.state.app.menuList[0].children;
@@ -54,7 +46,7 @@ export default {
     flex-direction: column;
 }
 .activeColor{
-    color: rgb(79, 79, 235);
+    color: #FE755E;
 }
 .navColor{
     color: #a7a7a7;

@@ -14,10 +14,10 @@ export const Router=[
           component: ()=>import('@/view/components/home.vue')
         },
         {
-          path: 'category',
-          name: 'category', 
-          meta: { title: '分类',i:'el-icon-menu' },//icon: 'guihuashishi' 
-          component: ()=>import('@/view/test/category.vue') //子组件
+          path: 'find',
+          name: 'find', 
+          meta: { title: '发现',i:'el-icon-menu' },//icon: 'guihuashishi' 
+          component: ()=>import('@/view/test/find.vue') //子组件
         },
         {
           path: 'user',
