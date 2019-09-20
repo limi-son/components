@@ -18,7 +18,7 @@
      <transition name="center-fade" appear>
        <div>
           <div class="center">
-            <el-row :gutter="10" justify="space-between" style="color:#a7a7a7;margin-bottom:0.6rem;">
+            <el-row :gutter="10" justify="space-between" style="margin-bottom:0.6rem;">
               <el-col :span="8">每日推荐</el-col>
               <el-col :span="2" :push="14"><i class="el-icon-more"></i></el-col>
             </el-row>
