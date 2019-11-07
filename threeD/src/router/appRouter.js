@@ -26,6 +26,13 @@ export const Router=[
           component: ()=>import('@/view/test/user.vue')
         },
       ]
+    },
+    {
+      path: '/jtopo',
+      name: 'jtopo',
+      meta: { title: '的',i:'el-icon-user' },
+      component: ()=>import('@/view/test/jtopo.vue'),
+      children: []
     }
   ]
 
